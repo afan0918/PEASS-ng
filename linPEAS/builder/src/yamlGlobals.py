@@ -80,10 +80,10 @@ REGEXES_YAML = CURRENT_DIR + "/../../../build_lists/" + YAML_REGEXES
 
 
 with open(FILES_YAML, 'r') as file:
-    YAML_LOADED = yaml.load(file, Loader=yaml.FullLoader)
+    YAML_LOADED = yaml.safe_load(file)
 
 with open(REGEXES_YAML, 'r') as file:
-    REGEXES_LOADED = yaml.load(file, Loader=yaml.FullLoader)
+    REGEXES_LOADED = yaml.safe_load(file)
 
 ROOT_FOLDER = YAML_LOADED["root_folders"]
 DEFAULTS = YAML_LOADED["defaults"]
